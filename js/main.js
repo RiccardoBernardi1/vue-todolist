@@ -4,6 +4,7 @@ const {createApp}=Vue;
 createApp({
     data() {
       return {
+        newText:"",
         toDoList:[
             {
                 text:"fare la spesa",
@@ -27,6 +28,17 @@ createApp({
     methods:{
         remove(i){
             this.toDoList.splice(i,1);
+        },
+        addToDo(){
+            const newObj={
+                text: this.newText,
+                done:false
+            }
+            this.toDoList.push(newObj);
+            this.newText="";
+        },
+        clickDone(i){
+            this.toDoList[i].done=true;
         }
     }
 }).mount('#app');

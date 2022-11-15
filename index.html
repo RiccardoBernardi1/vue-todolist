@@ -20,13 +20,13 @@
         </header>
         <main>
             <div class="container m-auto">
-                <form action="" class="d-flex justify-content-center my-5">
-                    <input class="mx-3 p-2" type="text" required placeholder="Aggiungi cose da fare">
+                <form action="" class="d-flex justify-content-center my-5" @submit.prevent @submit="addToDo">
+                    <input v-model="newText" class="mx-3 p-2" type="text" required placeholder="Aggiungi cose da fare">
                     <button type="submit" class="btn btn-success">Aggiungi</button>
                 </form>
                 <ul class="list-group" v-if="toDoList.length>0">
                     <li class="list-group-item d-flex justify-content-between" v-for="(todo,index) in toDoList" :class="todo.done ? 'l-through' : ''">
-                        {{todo.text}}
+                        <span @click="clickDone(index)">{{todo.text}}</span>
                         <span @click="remove(index)"><i class="fa-solid fa-xmark"></i></span>
                     </li>
                 </ul>
