@@ -18,10 +18,15 @@ createApp({
                 done: false
             },
             {
-                text:"Portare il cane dal veterinario",
+                text:"Portare il cane a spasso",
                 done: true
             },
         ]
       }
+    },
+    methods:{
+        remove(i){
+            this.toDoList.splice(i,1);
+        }
     }
 }).mount('#app');
