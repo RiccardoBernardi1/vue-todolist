@@ -38,7 +38,12 @@ createApp({
             this.newText="";
         },
         clickDone(i){
-            this.toDoList[i].done=true;
+            if(this.toDoList[i].done===false){
+                this.toDoList[i].done=true;
+            }else{
+                this.toDoList[i].done=false;
+            }
+            
         }
     }
 }).mount('#app');
