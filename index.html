@@ -24,7 +24,7 @@
                     <button type="submit" class="btn btn-success">Aggiungi</button>
                 </form>
                 <ul class="list-group" v-if="toDoList.length>0">
-                    <li class="list-group-item" v-for="(todo,index) in toDoList">{{todo.text}}</li>
+                    <li class="list-group-item" v-for="(todo,index) in toDoList" :class="todo.done ? 'l-through' : ''">{{todo.text}}</li>
                 </ul>
                 <div class="list-group text-center" v-else>
                     <h2>La lista è vuota</h2>

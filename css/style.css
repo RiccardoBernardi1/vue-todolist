@@ -20,4 +20,7 @@ header img{
 form input{
     border-radius: .9375rem;
 }
+.l-through{
+    text-decoration: line-through;
+}
 
